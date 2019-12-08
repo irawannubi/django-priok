@@ -16,7 +16,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path,include
 
+def blank(request):
+    return Httpresponse('API only')
+
 urlpatterns = [
+    path('', blank),
     path('admin/', admin.site.urls),
     path('api/v1/', include('upwork.urls'))
 ]
